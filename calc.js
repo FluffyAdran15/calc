@@ -58,8 +58,8 @@ function setOperator(number){
     var opString = "";
     flag = true;
     if(operator === 6){
-        display.innerHTML += "&#178;"
-        opString += "&#178;"
+        display.innerHTML += "&#178;";
+        opString += "&#178;";
     } else if(operator === 4){
         display.innerHTML += " / ";
         opString += " / ";
@@ -77,6 +77,7 @@ function setOperator(number){
     //for getting rid of multiple operator
     if(flag === true){
         display.innerHTML = num1 + opString;
+        num2 = "";
     }
 // dose not let us before entering
     if(flag === true && num1 === ""){
@@ -121,7 +122,7 @@ function equalClick(){
     else if(operator === 3){
         result = num1 * num2;
     }
-    else{
+    else if(operator === 4){
         result = num1 / num2;
     }
 
@@ -142,7 +143,7 @@ function backSpace(){
     var temp1 = "";
     var temp2 = "";
     if(equalTo === true){
-       
+        clearButton();
     }
     if(flag === false){
         temp1 = num1.substring(0, num1.length-1);
@@ -152,13 +153,11 @@ function backSpace(){
         display.innerHTML = num1;
         flag = false;
 
-    }
-
-    if(num2 !== ""){
+    }if(num2 !== ""){
         temp2 = num2.substring(0, num2.length-1);
         num2 = temp2;
         flag = true;
-        opSetString()
+        opSetString(operator)
        
     }
 }

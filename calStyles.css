@@ -5,12 +5,10 @@
 
 body{
     background: black;
-    background: linear-gradient(180deg, rgb(253, 144, 34) 34%, rgb(27, 26, 26) 100%) no-repeat;
+    background: linear-gradient(180deg, rgba(28,134,179,1) 0%, rgba(236,142,47,1) 67%) no-repeat;
     font-size: 15px;
     font-family: 'Kumar One', cursive;
     background-attachment: fixed;
-  
-
 }
 
 
@@ -25,14 +23,21 @@ html{
 
     .Header{
         text-align: center;
-        background-color:  rgb(255, 217, 0);
+        background-color:  rgb(255, 174, 0);
         padding: 5px 0px 5px;
         border: solid black 1px;
         width: 70%;
         transform: translateX(220px);
         border-radius: 50px;
+        -webkit-transition: background-color .5s ease-out;
+        -moz-transition: background-color .5s ease-out;
+        -o-transition: background-color .5s ease-out;
+        transition: background-color .5s ease-out;
         
-        
+    }
+    .Header:hover{
+        background-color: orangered;
+       
     }
 
 
@@ -50,10 +55,12 @@ html{
         margin: 25px auto;
         padding: 10px;
         border-radius: 35px;
-        background-color: rgb(224, 192, 150);
+        background-color: rgb(70, 111, 199);
         padding-top:20px;
         border: solid 2px black;
     }
+
+    
 
     /* display clear and delete rows */
 
@@ -67,7 +74,10 @@ html{
         margin: 0 auto;
         border-radius: 15px;
         font-size: 24px;
+       
     }
+
+   
 
 
     .clear , .Delete{
@@ -75,10 +85,17 @@ html{
         border-radius: 100px;
         background-color: azure;
         text-align: center;
+        
+    }
+    .clear:hover , .Delete:hover{
+        animation-iteration-count: infinite;
+        animation-name: operators;
+        animation-duration: 20s;
     }
 
     #ClearDelete{
         width: 80%;
+        
         
     }
 
@@ -93,23 +110,28 @@ html{
         height: 70px;
         border:  solid 1px black;
         background-color: azure;
+        -webkit-transition: background-color .5s ease-out;
+        -moz-transition: background-color .5s ease-out;
+        -o-transition: background-color .5s ease-out;
+        transition: background-color .5s ease-out;
 
     }
 
     button:hover{
         background-color: lightgoldenrodyellow;
         color: black;
-        font-size: 22px;
+        font-size: 20px;
+        
         
     }
 
     .operator{
-        background-color: rgb(248, 196, 100);
+        background-color: #ffc47c;
     }
     .operator:hover{
         background-color: rgb(233, 233, 133);
         color: black;
-        font-size: 30px;
+        
         
     }
     #equals{
@@ -129,3 +151,18 @@ html{
     #gone.square{
         background-color: rgb(248, 170, 69);
     }
+
+    .num-button:hover{
+        background-color: rgb(233, 233, 133);
+        color: black;
+        transition: background-color .8s linear,
+        color 0.8s linear;
+    }
+
+      @keyframes operators{
+        0%   {background-color: azure;}
+        25%  {background-color: rgb(0, 166, 172);}
+        50%  {background-color: rgb(178, 228, 252)}
+        75%  {background-color: rgb(0, 123, 128)}
+        100% {background-color: rgb(70, 111, 199);}
+      }
